@@ -8,7 +8,7 @@ const SearchBar = () => {
   return (
     <div className={styles.search_box}>
         <IoSearchOutline className={styles.search_icon} />
-        <HiArrowLeft className={styles.left_arrow} />
+        {/* <HiArrowLeft className={styles.left_arrow} /> */}
         <input className={styles.input_box} type="text" placeholder='Search' />
     </div>
   )

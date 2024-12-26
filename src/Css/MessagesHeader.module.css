@@ -1,0 +1,47 @@
+.message_header{
+    /* box-shadow: 0 1px 3px #0B141A; */
+    box-sizing: border-box;
+    background-color: #1f2c34;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 5px 20px;
+    position: absolute;
+    top: 0;
+}
+
+.profile_image{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #b3b9bd;
+    color: #fff;
+    padding: 6px;
+    
+}
+
+.profile_detail{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile_text{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.user_name{
+    color: #E9EfEF;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.message_header_text{
+    margin: 0px;
+    font-size: 13px;
+    color: #8696A0;
+}

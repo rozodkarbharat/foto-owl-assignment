@@ -4,7 +4,7 @@ const HomeHeader = () => {
   return (
     <div className={style.contact_header}>
         <p className={style.main_header}>Chats</p>
-        <div>
+        <div className={style.contact_header_right}>
           <svg
             viewBox="0 0 24 24"
             height="24"

@@ -1,0 +1,7 @@
+.messsage_box{
+    width: 100%;
+    height: 100vh;
+    background: url("/public/bg-chat.png");
+    position: relative;
+}
+
