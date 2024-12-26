@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Chat from './Pages/Chat';
+import Login from './Pages/Login';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/:id' element={<Chat/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </div>
   );

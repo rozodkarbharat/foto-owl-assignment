@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BsPersonFill } from "react-icons/bs";
 import style from "../Css/MessagesHeader.module.css";
+import { AuthContext } from "../context/AuthContext";
 
-const MessagesHeader = () => {
+const MessagesHeader = ({id}) => {
+  const { users} = useContext(AuthContext);
+  const [userData, setuserData] = useState({})
+  useEffect(() =>  {
+    let tempUser =  users.filter((user) =>user.number == id)
+    setuserData(tempUser[0]||{})
+  }, [id])
   return (
     <div className={style.message_header}>
       <div className={style.profile_detail}>
       <BsPersonFill className={style.profile_image} />
       <div className={style.profile_text}>
-        <p className={style.user_name}>Bharat Rozodkar</p>
+        <p className={style.user_name}>{userData?.name}</p>
         <p className={style.message_header_text}>click here for contact info</p>
       </div>
       <p></p>

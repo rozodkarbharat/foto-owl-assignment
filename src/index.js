@@ -5,14 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MessageConetxtProvider } from './context/MessageContext';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthConetxtProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <MessageConetxtProvider>
-      <App />
-    </MessageConetxtProvider>
+      <AuthConetxtProvider>
+        <MessageConetxtProvider>
+          <App />
+        </MessageConetxtProvider>
+      </AuthConetxtProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { db } from "../db";
+import { id } from '@instantdb/react';
 
-const useAddToInstantDB = (path) => {
+
+const useAddToInstantDB = (tablename) => {
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -13,10 +15,10 @@ const useAddToInstantDB = (path) => {
         setSuccess(false);
 
         try {
-            db.transact(() => {
-                db.insert(path, { task: 'New Task', completed: false });
-            });
 
+            db.transact(
+                db.tx[tablename][id()].update(data)
+              )
             setSuccess(true);
         } catch (err) {
             setError(err.message || "Something went wrong.");
