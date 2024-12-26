@@ -1,0 +1,35 @@
+.contact{
+    display: flex;
+    gap: 20px;
+    background-color: #121b22;
+    border-top: 0.1px solid rgba(134, 150, 160, .15);
+    margin-top: 10px;
+    padding-top: 5px;
+    align-items: center;
+}
+
+.profile_image{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #b3b9bd;
+    color: #fff;
+    padding: 6px;
+    
+}
+
+
+
+.user_name{
+    color: #fff;
+    font-size: 18px;
+    margin-top: 5px;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.message{
+    color: #8696A0;
+    margin: 2px;
+    font-size: 14px;
+}

@@ -1,0 +1,8 @@
+.contact_container{
+    max-height: 80vh;
+    overflow-y: scroll;
+    padding-left: 20px;
+    width: 350px;
+    scrollbar-color: #8696a0 #121b22;
+    scrollbar-width: thin;
+}

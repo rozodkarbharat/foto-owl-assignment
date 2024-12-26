@@ -1,0 +1,41 @@
+.search_box{
+  background-color: #202C33;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid green; */
+  width:350px;
+  margin: 5px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.input_box{
+  background-color: transparent;
+  border: none;
+  height: 25px;
+  width: 80%;
+  
+}
+
+.search_icon {
+    color: #8696a0;
+    font-size: 30px; 
+    margin: 5px 10px;
+}
+
+.left_arrow{
+  color: #8696a0;
+  font-size: 30px; 
+  margin: 5px 10px;
+
+}
+
+.input_box:focus + .search_box{
+  border: 1px solid red;
+  background-color: red;
+}
+
+
+.input_box:focus + .search_icon {
+  display: none;
+}
