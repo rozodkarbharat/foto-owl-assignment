@@ -6,6 +6,10 @@ import LeftBox from "../Components/LeftBox";
 const Home = () => {
   const [screenSizeWidth, setscreenSizeWidth] = useState(window.innerWidth)
 
+  useEffect(() => {
+    setscreenSizeWidth(window.innerWidth)
+  }, [])
+
   return (
     <div className={style.home_page}>
       <LeftBox />
