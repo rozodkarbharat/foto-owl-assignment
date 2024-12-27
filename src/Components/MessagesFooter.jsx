@@ -1,37 +1,68 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 import style from "../Css/MessagesFooter.module.css";
 import { FiPlus } from "react-icons/fi";
-import { MessagContext } from '../context/MessageContext';
-import { AuthContext } from '../context/AuthContext';
+import { MessagContext } from "../context/MessageContext";
+import { AuthContext } from "../context/AuthContext";
 
 const MessagesFooter = ({ id }) => {
   const [message, setMessage] = useState("");
   const { handleSendMessage, messages } = useContext(MessagContext);
   const { Data } = useContext(AuthContext);
-  
+
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+
+    if (e.key === "Enter") {
       e.preventDefault();
-      if (message.trim()) {  
+      if (message.trim()) {
         handleSendMessage({ message, from: Data.number, to: id });
-        setMessage(""); 
+        setMessage("");
       }
     }
   };
 
+  function handleSubmit(e){
+    e.preventDefault();
+      if (message.trim()) {
+        handleSendMessage({ message, from: Data.number, to: id });
+        setMessage("");
+      }
+  }
+
   return (
     <div className={style.message_footer}>
       <FiPlus className={style.plus_icon} />
-      <form className={style.message_form} onSubmit={(e) => e.preventDefault()}> 
+      <form className={style.message_form} onSubmit={(e) => e.preventDefault()}>
         <input
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className={style.input_box}
           type="text"
           placeholder="Type a message"
-          onKeyDown={handleKeyPress} 
+          onKeyDown={handleKeyPress}
         />
+        { message.length > 0 &&
+        <span onClick={handleSubmit} aria-hidden="true" data-icon="send" class="">
+          <svg
+            viewBox="0 0 24 24"
+            height="24"
+            width="24"
+            preserveAspectRatio="xMidYMid meet"
+            class=""
+            version="1.1"
+            x="0px"
+            y="0px"
+            enable-background="new 0 0 24 24"
+          >
+            <title>send</title>
+            <path
+              fill="#8696a0"
+              d="M1.101,21.757L23.8,12.028L1.101,2.3l0.011,7.912l13.623,1.816L1.112,13.845 L1.101,21.757z"
+            ></path>
+          </svg>
+        </span>
+        }
       </form>
+      { message.length == 0 &&
       <span aria-hidden="true" data-icon="ptt">
         <svg
           viewBox="0 0 24 24"
@@ -50,6 +81,7 @@ const MessagesFooter = ({ id }) => {
           ></path>
         </svg>
       </span>
+      }
     </div>
   );
 };

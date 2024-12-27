@@ -45,3 +45,17 @@
     font-size: 13px;
     color: #8696A0;
 }
+
+.left_arrow{
+    color: #fff;
+    font-size: 26px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+@media (min-width: 0px) and (main-width:700){
+    .left_arrow{
+        display: block;
+        
+    }
+}

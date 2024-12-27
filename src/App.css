@@ -3,6 +3,7 @@
   background-color: #121b22;
   box-sizing: border-box;
   height: 100vh;
+  max-width: 100%;
   overflow: hidden;
 }
 

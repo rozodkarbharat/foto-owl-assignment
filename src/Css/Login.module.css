@@ -43,3 +43,9 @@
     margin: auto;
     cursor: pointer;
 }
+
+@media (min-width: 0px) and (max-width:380px){
+    .login_form{
+        width: 80%;
+    }
+}

@@ -2,17 +2,23 @@ import React, { useContext, useEffect, useState } from "react";
 import { BsPersonFill } from "react-icons/bs";
 import style from "../Css/MessagesHeader.module.css";
 import { AuthContext } from "../context/AuthContext";
+import { HiArrowLeft } from "react-icons/hi2";
+
 
 const MessagesHeader = ({id}) => {
   const { users} = useContext(AuthContext);
   const [userData, setuserData] = useState({})
+  const [screenSizeWidth, setscreenSizeWidth] = useState(window.innerWidth)
+
   useEffect(() =>  {
     let tempUser =  users.filter((user) =>user.number == id)
     setuserData(tempUser[0]||{})
   }, [id])
+  
   return (
     <div className={style.message_header}>
       <div className={style.profile_detail}>
+       {screenSizeWidth<700 && <HiArrowLeft className={style.left_arrow} />}
       <BsPersonFill className={style.profile_image} />
       <div className={style.profile_text}>
         <p className={style.user_name}>{userData?.name}</p>

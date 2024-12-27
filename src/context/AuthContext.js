@@ -24,7 +24,6 @@ export const AuthConetxtProvider = ({children})=>{
         };
 
     function handleLogin(){
-        console.log(Data,'data')
         let isUserExist = data?.users?.filter((user)=>user.number == Data.number)
         if(isUserExist?.length==0){
             addData(Data);

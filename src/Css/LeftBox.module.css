@@ -1,3 +1,10 @@
 .left_box{
     border-right: 0.5px solid rgba(134, 150, 160, .15);
+    height: 100vh;
+}
+
+@media (min-width: 0) and (max-width: 700px) {
+    .left_box{
+        width: 100%;
+    }
 }
